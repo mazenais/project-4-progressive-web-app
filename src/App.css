@@ -8,7 +8,7 @@
 
 html,
 body {
-  background: #000 no-repeat center center/cover;
+  background: rgba(32, 30, 30, 0.897) no-repeat center center/cover;
   height: 100vh;
   color: #fff;
   font-family: Arial, Helvetica, sans-serif;
