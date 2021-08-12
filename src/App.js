@@ -2,7 +2,16 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Header from "./components/ui/Header";
 import SportGrid from "./components/sports/SportGrid";
+
 import "./App.css";
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import SportDetails from "./components/sports/SportDetails";
 
 const App = () => {
   const [items, setItems] = useState([]);
@@ -24,7 +33,34 @@ const App = () => {
   return (
     <div className="container">
       <Header />
-      <SportGrid isLoading={isLoading} items={items} />
+      
+      <Router>
+      <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link exact to="/sports">Sports</Link>
+            </li>
+          </ul>
+        </nav>
+
+      <Switch>
+          <Route exact path="/">
+            <h1>All Sports</h1>
+          </Route>
+          <Route exact path="/sports">
+          <SportGrid isLoading={isLoading} items={items} />
+          </Route>
+          <Route exact path="/sports/:name">
+            <SportDetails/>
+          </Route>
+          
+          
+        </Switch>
+
+      </Router>
     </div>
   );
 };
