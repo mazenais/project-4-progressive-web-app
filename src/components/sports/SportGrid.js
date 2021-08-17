@@ -5,7 +5,7 @@ const SportGrid = ({ items, isLoading }) => {
       <h1>Loading...</h1>
     ) : (
       <section className="cards">
-        {items.sports.map((item) => (
+        {items.teams.map((item) => (
             <SportItem key={item.idSport} item={item}></SportItem>
 
         ))}

@@ -4,15 +4,16 @@ import { Link } from "react-router-dom";
 const SportItem = ({ item }) => {
   console.log(item);
   return (
-    <Link to={`/sports/${item.strSport}`}>
-      <h3>{ item.strSport }</h3>
+    <Link to={`/sports/${item.strAlternate}`}>
+      <h3>{ item.strAlternate }</h3>
       <div className="card">
         <div className="card-inner">
           <div className="card-front">
-            <img src={item.strSportThumb} alt="" />
+            <img src={item.strTeamBadge} alt="" />
           </div>
           <div className="card-back">
-            <h1>{item.strSport}</h1>
+            <h1>{item.strAlternate}</h1>
+            <h2>{item.strCountry}</h2>
             <ul>
               <li>
                 <strong>Type:</strong> {item.strFormat}

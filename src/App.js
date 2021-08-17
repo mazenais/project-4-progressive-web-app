@@ -20,7 +20,7 @@ const App = () => {
   useEffect(() => {
     const fetchItems = async () => {
       const result = await axios(
-        `https://www.thesportsdb.com/api/v1/json/1/all_sports.php`
+        `https://www.thesportsdb.com/api/v1/json/1/search_all_teams.php?l=English%20Premier%20League`
       );
 
       console.log(result.data);
@@ -38,25 +38,18 @@ const App = () => {
       <nav>
           <ul>
             <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link exact to="/sports">Sports</Link>
+              <Link exact to="/sports">Home</Link>
             </li>
           </ul>
         </nav>
 
       <Switch>
-          <Route exact path="/">
-            <h1>All Sports</h1>
-          </Route>
           <Route exact path="/sports">
           <SportGrid isLoading={isLoading} items={items} />
           </Route>
           <Route exact path="/sports/:name">
             <SportDetails/>
           </Route>
-          
           
         </Switch>
 
