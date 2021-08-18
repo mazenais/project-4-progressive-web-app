@@ -1,13 +1,28 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 
-
-const SportDetailsItem = (item) => {
-    console.log(item);
-
+const SportDetailsItem = ({ item }) => {
+    console.log(item)
     return (
         <Link to={`/sports/${item.strAlternate}`}>
-            <h3>{item.strDescriptionEN}</h3>
+      <h3>{ item.strAlternate }</h3>
+      <div className="card">
+        <div className="card-inner">
+          <div className="card-front">
+            <img src={item.strTeamBadge} alt="" />
+          </div>
+          <div className="card-back">
+            <h1>{item.strAlternate}</h1>
+            <h2>{item.strCountry}</h2>
+            <ul>
+              <li>
+                <strong>Type:</strong> {item.strFormat}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </Link>
     )
 }
 

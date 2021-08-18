@@ -1,8 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import {BrowserRouter as Router, useHistory} from "react-router-dom"
 import axios from 'axios'
+import SportDetailsItem from './SportDetailsItem'
 
 const SportDetails = () => {
+
+const history = useHistory();
+
+const handleHistory = () => {
+  history.push("/sports")
+
+}
+
   let { name } = useParams();
   console.log("name :>>", name);
   
@@ -10,7 +20,7 @@ const SportDetails = () => {
   const [sportDescription, setSportDescription] = useState([])
 
   const fetchData = () => {
-    const teamsAPI = `https://www.thesportsdb.com/api/v1/json/1/lookup_all_teams.php?id=4328`;
+    const teamsAPI = `https://www.thesportsdb.com/api/v1/json/1/search_all_seasons.php?id=4328`;
 
     const getTeamDetails = axios.get(teamsAPI)
 
@@ -30,9 +40,10 @@ useEffect(() => {
 
   return (
     <div>
+      <button onClick={handleHistory}>back</button>
       <h2>Details</h2>
       <p>{name}</p>
-      Team name is: { sportDescription }
+    
     </div>
     
   );
