@@ -51,7 +51,7 @@ const App = () => {
           <Route exact path="/sports">
           <SportGrid isLoading={isLoading} items={items} />
           </Route>
-          <Route exact path="/sports/:name">
+          <Route exact path="/sports/:idTeam">
             <SportDetails/>
           </Route>
           <Route exact path="/Login">
