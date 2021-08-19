@@ -5,15 +5,17 @@ import {BrowserRouter as Router, useHistory} from "react-router-dom"
 
 const SportDetails = ({items}) => {
 
+ 
 const history = useHistory();
-
 const handleHistory = () => {
   history.push("/sports")
 
 }
 
   let { idTeam } = useParams();
+
   console.log("idTeam :>>", idTeam);
+ 
   
   const [team, setTeam] = useState();
   const [isLoading, setIsLoading] = useState(true);
@@ -35,10 +37,18 @@ const handleHistory = () => {
   return (
     <div>
       <button onClick={handleHistory}>back</button>
-      <h2>Details</h2>
-      <p>{team?.strDescriptionEN}</p>
-     
-    </div>
+      <div className="cards">
+            <h3>Name:{team?.strAlternate}</h3>
+            <p>Country:{team?.strCountry}</p> 
+            <p>Nicknames:{team?.strKeywords}</p>
+            <a href={team?.strWebsite}>Website</a>
+            <a href={team?.strFacebook}>Facebook</a>
+            <a href={team?.strYoutube}>Youtube</a>
+            <a href={"team?.strTwitter"}>Twitter</a>
+            <a href={"https://google.com"}>Google</a>
+
+      </div>
+      </div>
     
   );
 };
