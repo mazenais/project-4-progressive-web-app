@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Header from "./components/ui/Header";
 import SportGrid from "./components/sports/SportGrid";
+import Login from "./login-folder/Login"
 
 import "./App.css";
 
@@ -40,6 +41,9 @@ const App = () => {
             <li>
               <Link exact to="/sports">Home</Link>
             </li>
+            <li>
+              <Link exact to="/Login">Log In</Link>
+            </li>
           </ul>
         </nav>
 
@@ -49,6 +53,9 @@ const App = () => {
           </Route>
           <Route exact path="/sports/:name">
             <SportDetails/>
+          </Route>
+          <Route exact path="/Login">
+          <Login/>
           </Route>
           
         </Switch>
