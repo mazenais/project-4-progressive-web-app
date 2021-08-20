@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Header from "./components/ui/Header";
 import SportGrid from "./components/sports/SportGrid";
-import Login from "./login-folder/Login"
-
+import Register from './components/auth/Register'
+import Login from "./components/auth/Login"
+import { AuthContextProvider } from './context/AuthContext'
 import "./App.css";
-
 import {
   BrowserRouter as Router,
   Switch,
@@ -13,6 +13,7 @@ import {
   Link
 } from "react-router-dom";
 import SportDetails from "./components/sports/SportDetails";
+import Nav from '../src/components/Nav'
 
 const App = () => {
   const [items, setItems] = useState([]);
@@ -33,19 +34,10 @@ const App = () => {
 
   return (
     <div className="container">
+      <AuthContextProvider> 
       <Header />
-      
       <Router>
-      <nav>
-          <ul>
-            <li>
-              <Link exact to="/sports">Home</Link>
-            </li>
-            <li>
-              <Link exact to="/Login">Log In</Link>
-            </li>
-          </ul>
-        </nav>
+      <Nav />
 
       <Switch>
           <Route exact path="/sports">
@@ -55,12 +47,15 @@ const App = () => {
             <SportDetails/>
           </Route>
           <Route exact path="/Login">
-          <Login/>
+          <Login />
+          </Route>
+          <Route exact path="/Register">
+          <Register />
           </Route>
           
         </Switch>
-
       </Router>
+      </AuthContextProvider>
     </div>
   );
 };
