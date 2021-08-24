@@ -26,7 +26,7 @@ const Login = () => {
             
         <form onSubmit={handleSubmit}>
             <div>
-            <button onClick={handleHistory}>back</button>
+            <button className="return_button" onClick={handleHistory}>back</button>
             </div>
             <label>
                 <p>email</p>
@@ -37,7 +37,7 @@ const Login = () => {
                 <input type="password" name="password" placeholder="Password..." required value={state.password} onChange={handleChange}/>
             </label>
             <div>
-            <button type="submit">Log In</button>
+            <button className="submit_button" type="submit">Log In</button>
             
             </div>
         </form>

@@ -1,7 +1,8 @@
 import React, { useEffect, useState }  from "react";
 import { useParams } from "react-router-dom";
 import axios from 'axios'
-import {BrowserRouter as Router, useHistory} from "react-router-dom"
+import {BrowserRouter as Router, useHistory, Link} from "react-router-dom"
+
 
 const SportDetails = ({items}) => {
 
@@ -33,19 +34,21 @@ const handleHistory = () => {
     fetchItems()
   }, []);
  
-
+  
   return (
     <div>
-      <button onClick={handleHistory}>back</button>
+      <button className="return_button" style={{marginTop: '180px'}} onClick={handleHistory}>back</button>
       <div className="cards">
             <h3>Name:{team?.strAlternate}</h3>
             <p>Country:{team?.strCountry}</p> 
             <p>Nicknames:{team?.strKeywords}</p>
-            <a href={team?.strWebsite}>Website</a>
+            <a href={"team?.strWebsite"}>Website</a>
             <a href={team?.strFacebook}>Facebook</a>
-            <a href={team?.strYoutube}>Youtube</a>
+            <a href={"team?.strYoutube"}>Youtube</a>
             <a href={"team?.strTwitter"}>Twitter</a>
             <a href={"https://google.com"}>Google</a>
+            <a href="/teams/{team.strWebsite}">w</a>
+                
 
       </div>
       </div>

@@ -1,5 +1,6 @@
 import React from 'react'
-import SportItem from './SportItem'
+import SportItem from './SportItem';
+
 const SportGrid = ({ items, isLoading }) => {
     return isLoading ? (
       <h1>Loading...</h1>

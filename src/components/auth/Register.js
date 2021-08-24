@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react'
 import { useHistory } from'react-router-dom'
 import { AuthContext } from '../../../src/context/AuthContext'
-
+import './Login.css'
 const Register = () => {
     const [state, setState] = useState({ email: "", password: "", name: ""})
 
@@ -27,7 +27,7 @@ const Register = () => {
     return (
         <form onSubmit={handleSubmit}>
             <div>
-            <button onClick={handleHistory}>back</button>
+            <button className="return_button" onClick={handleHistory}>back</button>
             </div>
             <label> 
             <p>name</p>
@@ -42,7 +42,7 @@ const Register = () => {
                 <input type="password" name="password" onChange={handleChange} value={state.password} />
             </label>
             <div>
-                <button type="submit">Submit</button>
+                <button className="submit_button" type="submit">Submit</button>
             </div>
         </form>
     )

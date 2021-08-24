@@ -1,10 +1,6 @@
 
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+
 
 html,
 body {
@@ -12,6 +8,7 @@ body {
   height: 100vh;
   color: rgb(26, 24, 24);
   font-family: Arial, Helvetica, sans-serif;
+  height: 100%;
 }
 
 a {
@@ -22,6 +19,7 @@ a {
   max-width: 1100px;
   margin: auto;
   padding: 0 20px;
+  height: 100%;
 }
 
 .btn {
@@ -65,6 +63,7 @@ input[type='text'] {
 }
 
 .cards {
+  margin-top: 180px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
