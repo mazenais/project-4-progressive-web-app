@@ -42,7 +42,7 @@ const handleHistory = () => {
             <h3>Name:{team?.strAlternate}</h3>
             <p>Country:{team?.strCountry}</p> 
             <p>Nicknames:{team?.strKeywords}</p>
-            <a href={"team?.strWebsite"}>Website</a>
+            <a href={`https://${team?.strWebsite}`} target="_blank">Website</a>
             <a href={team?.strFacebook}>Facebook</a>
             <a href={"team?.strYoutube"}>Youtube</a>
             <a href={"team?.strTwitter"}>Twitter</a>

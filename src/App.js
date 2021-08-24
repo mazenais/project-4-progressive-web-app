@@ -19,29 +19,10 @@ import BackDrop from './components/Backdrop/BackDrop'
 import { render } from "@testing-library/react";
 
 const App = () => {
-  
-   state = {
-    sideDrawerOpen: false
-  };
-
-  const drawerClickHandler = () => {
-    this.setState((prevState) => {
-      return {sideDrawerOpen: !prevState.sideDrawerOpen};
-    });
-  };
-
-  render() 
-    let sideDrawer;
-    let backdrop;
-
-    if (this.state.sideDrawerOpen) {
-      sideDrawer = <SideDrawer />
-      backdrop = <BackDrop />
-    }
-  
 
 
   const [items, setItems] = useState([]);
+  const [drawerOpen, setDrawerOpen] = useState(false)
   const [isLoading, setIsLoading] = useState(true);
 
   
@@ -58,16 +39,19 @@ const App = () => {
     };
     fetchItems()
   }, []);
+
+  const drawerClickHandler = () => {
+    setDrawerOpen(!drawerOpen)
+  };
  
   return (
     <div className="container" style={{height: '100%'}}>
       <AuthContextProvider> 
      
       <Router>
-      <Nav drawerClickHandler={this.drawerClickHandler} />
-      {sideDrawer}
-      {backdrop}
-
+      <Nav drawerClickHandler={drawerClickHandler}/>
+      {drawerOpen && <SideDrawer drawerClickHandler={drawerClickHandler}/>}
+      {drawerOpen && <BackDrop />}
       <Switch>
           <Route exact path="/sports">
           <SportGrid isLoading={isLoading} items={items} />

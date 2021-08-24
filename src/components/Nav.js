@@ -17,7 +17,7 @@ const Nav = props => {
       <header className="toolbar"> 
         <nav className="toolbar-navigation">
           <div>
-            <DrawerButton click={props.drawerClickhandler}/>
+            <DrawerButton click={props.drawerClickHandler}/>
           </div>
             <div className="toolbar_logo"><a href="/"></a>The Premier League</div>
             <div className="spacer" />

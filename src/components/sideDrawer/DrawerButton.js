@@ -2,13 +2,16 @@ import './DrawerButton.css'
 import React from 'react';
 
 
-const drawerButton = props => (
+const DrawerButton = props => {
+    console.log(props)
+    return (
+
     <button className="toggle-button" onClick={props.click}> 
-        <div classname="button_line" />
-        <div classname="button_line" />
-        <div classname="button_line" />
+        <div className="button_line" />
+        <div className="button_line" />
+        <div className="button_line" />
     </button>
 
 );
-
-export default drawerButton;
+    }
+export default DrawerButton;
