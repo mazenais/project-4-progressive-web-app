@@ -1,7 +1,8 @@
 import React, { useEffect, useState }  from "react";
 import { useParams } from "react-router-dom";
 import axios from 'axios'
-import {BrowserRouter as Router, useHistory, Link} from "react-router-dom"
+import {BrowserRouter as Router, useHistory, Link} from "react-router-dom";
+import * as ReactBootstrap from "react-bootstrap";
 
 
 const SportDetails = ({items}) => {
@@ -37,7 +38,7 @@ const handleHistory = () => {
   
   return (
     <div>
-      <button className="return_button" style={{marginTop: '180px'}} onClick={handleHistory}>back</button>
+      <ReactBootstrap.Button className="return_button" style={{marginTop: '180px'}} onClick={handleHistory}>back</ReactBootstrap.Button>
       <div className="cards">
             <h3>Name:{team?.strAlternate}</h3>
             <p>Country:{team?.strCountry}</p> 

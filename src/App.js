@@ -17,6 +17,7 @@ import Nav from '../src/components/Nav'
 import SideDrawer from './components/sideDrawer/SideDrawer'
 import BackDrop from './components/Backdrop/BackDrop'
 import { render } from "@testing-library/react";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
 
