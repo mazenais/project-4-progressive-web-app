@@ -2,6 +2,9 @@ import React, { useState, useContext } from 'react'
 import { useHistory } from'react-router-dom'
 import { AuthContext } from '../../../src/context/AuthContext'
 import './Login.css'
+import * as ReactBootstrap from "react-bootstrap";
+import { Input } from "react-bootstrap";
+
 const Register = () => {
     const [state, setState] = useState({ email: "", password: "", name: ""})
 

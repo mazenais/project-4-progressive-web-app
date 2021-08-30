@@ -3,13 +3,15 @@
     top: 0;
     left: 0;
     width: 100%;
-    background: #7ebbee;
+    background: #3093e4;
     height: 56px;
     z-index: 9999;
 }
 .toolbar_logo {
-    margin-left: 0.5rem;
-
+    margin-left: 2rem;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 19px;
+    color: white;
 }
 
 .toolbar_logo a {

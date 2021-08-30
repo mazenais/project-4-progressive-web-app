@@ -13,6 +13,11 @@ body {
 
 a {
   text-decoration: none;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
 }
 
 .container {
@@ -25,7 +30,7 @@ a {
 .btn {
   display: inline-block;
   color: #fff;
-  background-color: #3fb573;
+  background-color: #309bf1;
   font-size: 1em;
   text-align: center;
   padding: 10px 15px;

@@ -1,8 +1,8 @@
 import React from 'react';
 import './BackDrop.css';
 
-const backDrop = props => (
+const BackDrop = props => (
     <div className="backdrop" />
 );
 
-export default backDrop
+export default BackDrop

@@ -40,17 +40,35 @@ const handleHistory = () => {
     <div>
       <ReactBootstrap.Button className="return_button" style={{marginTop: '180px'}} onClick={handleHistory}>back</ReactBootstrap.Button>
       <div className="cards">
-            <h3>Name:{team?.strAlternate}</h3>
-            <p>Country:{team?.strCountry}</p> 
-            <p>Nicknames:{team?.strKeywords}</p>
-            <a href={`https://${team?.strWebsite}`} target="_blank">Website</a>
-            <a href={team?.strFacebook}>Facebook</a>
-            <a href={"team?.strYoutube"}>Youtube</a>
-            <a href={"team?.strTwitter"}>Twitter</a>
-            <a href={"https://google.com"}>Google</a>
-            <a href="/teams/{team.strWebsite}">w</a>
-                
+        
+          <h3>Name:{team?.strAlternate}</h3>
+          <div> 
+          <ul>
+            <li> 
+          <p>Country:{team?.strCountry}</p> 
+          </li>
+          <li> 
+          <p>Nicknames:{team?.strKeywords}</p>
+          </li>
+            <li> 
+          <a href={`https://${team?.strWebsite}`} target="_blank">Website</a>
+          </li>
+          <li> 
+          <a href={`https://${team?.strFacebook}`} target="_blank">Facebook</a>
+          </li>
+          <li> 
+          <a href={`https://${team?.strYoutube}`} target="_blank">Youtube</a>
+          </li>
+          <li>
+          <a href={`https://${team?.strTwitter}`} target="_blank">Twitter</a>
+          </li>
+          <li> 
+          <a href={`https://${team?.strInstagram}`} target="_blank">Instagram</a>
+          </li>
 
+          </ul>
+                
+          </div>
       </div>
       </div>
     

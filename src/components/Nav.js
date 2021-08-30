@@ -4,6 +4,7 @@ import {
   } from "react-router-dom";
   import { AuthContext, AuthContextProvider } from '../../src/context/AuthContext'
   import DrawerButton from '../components/sideDrawer/DrawerButton'
+ 
   import '../components/Nav.css'
   
   
@@ -21,23 +22,9 @@ const Nav = props => {
           <div>
             <DrawerButton click={props.drawerClickHandler}/>
           </div>
-            <div className="toolbar_logo"><a href="/"></a>The Premier League</div>
-            <div className="spacer" />
-          <div className="toolbar-navigation-items"> 
-        <ul>
-          <li>
-            <Link exact to="/sports">Home</Link>
-          </li>
-          <li>
-            <Link exact to="/Login">Log In</Link>
-          </li>
-          <li>
-            <Link exact to="/Register">Register</Link>
-          </li>
-        </ul>
-        </div>
+            <div className="toolbar_logo">The Premier League</div>
       </nav>
-      <main style={{marginTop: '18px'}}><p>{user? user.email : "Not logged in"}</p> </main>
+      <main style={{marginTop: '18px', marginLeft: '10px'}}><p>{user? user.email : "Not logged in"}</p> </main>
       </header>
       
     )

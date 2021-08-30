@@ -1,15 +1,28 @@
 import React from 'react';
+import {
+    Link
+  } from "react-router-dom";
 import '../sideDrawer/SideDrawer.css'
-import CloseButton from './CloseButton';
+
 
 const SideDrawer = props => (
 
     <nav className="side-drawer">
-        <CloseButton className="close-button"click={props.drawerClickHandler}/>
-        <ul>
-            <li><a href="/">Login</a></li>
-            <li><a href="/">Register</a></li>
+        
+        <div>
+          <ul>
+          <li>
+            <Link exact to="/sports" target="_parent">Home</Link>
+          </li>
+          <li>
+            <Link exact to="/Login" target="_parent">Log In</Link>
+          </li>
+          <li>
+            <Link exact to="/Register" target="_parent">Register</Link>
+          </li>
         </ul>
+        </div>
+        
     </nav>
 );
 

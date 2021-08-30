@@ -25,7 +25,9 @@
 }
 
 .side-drawer a {
-    color: #521751;
+    margin-top: 150px;
+    margin-inline: 65px;
+    color: #3c69e4;
     text-decoration: none;
     font-size: 1-2rem;
 
