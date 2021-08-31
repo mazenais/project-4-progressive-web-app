@@ -20,6 +20,9 @@ const SideDrawer = props => (
           <li>
             <Link exact to="/Register" target="_parent">Register</Link>
           </li>
+          <li>
+            <Link exact to="/Chat" target="_parent">Chat Room</Link>
+          </li>
         </ul>
         </div>
         

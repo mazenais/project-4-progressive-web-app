@@ -4,9 +4,9 @@
 
 html,
 body {
-  background: rgba(255, 255, 255, 0.897) no-repeat center center/cover;
+  background: #f9fcfc no-repeat center center/cover;
   height: 100vh;
-  color: rgb(26, 24, 24);
+  color: rgb(255, 255, 255);
   font-family: Arial, Helvetica, sans-serif;
   height: 100%;
 }
@@ -68,10 +68,10 @@ input[type='text'] {
 }
 
 .cards {
-  margin-top: 180px;
+  margin-top: 150px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .card {
@@ -82,14 +82,14 @@ input[type='text'] {
 }
 
 .card h1 {
-  font-size: 25px;
+  font-size: 30px;
   border-bottom: 1px #fff solid;
   padding-bottom: 10px;
   margin-bottom: 10px;
 }
 
 .card img {
-  width: 100%;
+  width: 90%;
   height: 300px;
   object-fit: cover;
 }
