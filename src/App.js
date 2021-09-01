@@ -21,17 +21,17 @@ import { ChatContext, ChatContextProvider } from "./context/ChatContext"
 import { AuthContextProvider, AuthContext } from "./context/AuthContext";
 import { ThemeProvider } from "./context/themeContext";
 
+
 const PrivateRoute = ({ component: Component, ...rest }) => {
-  console.log("rest :>>", rest);
+  console.log('rest :>> ', rest);
 
   const { user } = useContext(AuthContext);
   return (
-    <Route
-      {...rest}
-      render={(props) =>
-        user ? <Component {...props} /> : <Redirect to="/Login" />
-      }
-    />
+    <Route {...rest} render={props => ( 
+        user ? 
+        <Component {...props} /> 
+        : <Redirect to="/Login" />
+    )} />
   );
 };
 

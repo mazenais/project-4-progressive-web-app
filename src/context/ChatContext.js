@@ -3,6 +3,8 @@ import { AuthContext } from "./AuthContext";
 import firebase from "../Config";
 import { deepPurple } from "@material-ui/core/colors";
 
+
+
 //initialize firestore
 const db = firebase.firestore();
 
@@ -22,11 +24,11 @@ export const ChatContextProvider = ({ children }) => {
         timestamp: new Date(),
       })
       .then(() => {
-        console.log("Message successfully published!");
+        console.log("Document successfully added!");
         getMessages();
       })
       .catch((error) => {
-        console.error("Error writing message: ", error);
+        console.error("Error adding document: ", error);
       });
   };
 
@@ -39,10 +41,11 @@ export const ChatContextProvider = ({ children }) => {
           // doc.data() is never undefined for query doc snapShots
           convertedMessages.push(doc.data());
         });
-        console.log("convertedMessages :>>", convertedMessages);
+        console.log('convertedMessages :>> ', convertedMessages);
         setMessages(convertedMessages);
       });
   };
+
   return (
     <ChatContext.Provider value={{ messages, writeMessage, getMessages }}>
       {children}
