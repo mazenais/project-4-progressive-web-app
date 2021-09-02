@@ -8,7 +8,7 @@ import { ThemeContext } from '../../context/themeContext'
 
 
 
-const SideDrawer = props => {
+const SideDrawer = ({ drawerClickHandler }) => {
   const { user } = useContext(AuthContext)
     const { activeTheme, toggleTheme } = useContext(ThemeContext)
 
@@ -20,21 +20,21 @@ return (
 
     <nav className="side-drawer">
         
-        <div>
+        <div onClick={drawerClickHandler}>
           <button onClick={handleClick}>toggle</button>
           <p>{user ? user.email : "Not logged in"}</p>
           <ul>
           <li>
-            <Link  to="/sports" target="_parent">Home</Link>
+            <Link  to="/sports">Home</Link>
           </li>
           <li>
-            <Link  to="/Login" target="_parent">Log In</Link>
+            <Link  to="/Login" >Log In</Link>
           </li>
           <li>
-            <Link  to="/Register" target="_parent">Register</Link>
+            <Link  to="/Register" >Register</Link>
           </li>
           <li>
-            <Link  to="/ChatRoom" target="_parent">Chat Room</Link>
+            <Link  to="/ChatRoom" >Chat Room</Link>
           </li>
         </ul>
         </div>

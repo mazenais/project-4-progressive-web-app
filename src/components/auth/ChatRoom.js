@@ -4,7 +4,7 @@ import { ChatContext } from '../../context/ChatContext'
 const flexContainer = { display: 'flex', flexDirection: 'column' }
 
 const ChatRoom = () => {
-    const { messages, WriteMessage, getMessages } = useContext(ChatContext)
+    const { messages, writeMessage, getMessages } = useContext(ChatContext)
     const [body, setBody] = useState('')
 
     useEffect(() => {
@@ -16,7 +16,7 @@ const ChatRoom = () => {
         setBody(e.target.value)
     }
     const handleWriteMessages = () => {
-          WriteMessage(body)
+          writeMessage(body)
     }
     console.log('messages', messages)
 
@@ -31,9 +31,9 @@ const ChatRoom = () => {
       {messages ? messages.map((message, index) => {
           return (
               <div>
-                  <h5>{message.name}</h5>
-                  <h6>{message.timestamp.toString()}</h6>
-                  <p>{message.body}</p>
+                  <h5>Email:{message.email}</h5>
+                  <h6>Time:{message.timestamp.toDate().toUTCString()}</h6>
+                  <p>Message:{message.body}</p>
               </div>
           )
       }) : <h2>Loading...</h2>}

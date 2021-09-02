@@ -1,6 +1,6 @@
 import { createContext, useState, useEffect, useContext } from "react";
 import { AuthContext } from "./AuthContext";
-import firebase from "../Config";
+import firebase from '../Config';
 import { deepPurple } from "@material-ui/core/colors";
 
 
@@ -19,7 +19,7 @@ export const ChatContextProvider = ({ children }) => {
     // add a new document in collection "cities"
     db.collection("chatroom")
       .add({
-        name: user.displayName,
+        email: user.email,
         body,
         timestamp: new Date(),
       })
