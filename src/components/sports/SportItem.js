@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import * as ReactBootstrap from "react-bootstrap";
 
 const SportItem = ({ item }) => {
   console.log(item);

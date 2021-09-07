@@ -19,7 +19,7 @@ import { render } from "@testing-library/react";
 import ChatRoom from "./components/auth/ChatRoom";
 import { ChatContext, ChatContextProvider } from "./context/ChatContext"
 import { AuthContextProvider, AuthContext } from "./context/AuthContext";
-import { ThemeProvider } from "./context/themeContext";
+
 
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
@@ -59,7 +59,7 @@ const App = () => {
 
   return (
     <div className="container" style={{ height: "100%" }}>
-      <ThemeProvider>
+     
         <AuthContextProvider>
           <Router>
             <Nav drawerClickHandler={drawerClickHandler} />
@@ -86,7 +86,7 @@ const App = () => {
             </ChatContextProvider>
           </Router>
         </AuthContextProvider>
-      </ThemeProvider>
+      
     </div>
   );
 };

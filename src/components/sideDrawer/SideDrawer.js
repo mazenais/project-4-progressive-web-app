@@ -5,6 +5,7 @@ import {
 import '../sideDrawer/SideDrawer.css'
 import { AuthContext } from '../../context/AuthContext'
 import { ThemeContext } from '../../context/themeContext'
+import * as ReactBootstrap from "react-bootstrap";
 
 
 
@@ -25,16 +26,24 @@ return (
           <p>{user ? user.email : "Not logged in"}</p>
           <ul>
           <li>
-            <Link  to="/sports">Home</Link>
+            <Link  to="/sports">
+              <ReactBootstrap.Button>Home</ReactBootstrap.Button>
+              </Link>
           </li>
           <li>
-            <Link  to="/Login" >Log In</Link>
+            <Link  to="/Login" >
+            <ReactBootstrap.Button>Log In</ReactBootstrap.Button>
+            </Link>
           </li>
           <li>
-            <Link  to="/Register" >Register</Link>
+            <Link  to="/Register" >
+            <ReactBootstrap.Button>Register</ReactBootstrap.Button>
+            </Link>
           </li>
           <li>
-            <Link  to="/ChatRoom" >Chat Room</Link>
+            <Link  to="/ChatRoom" >
+            <ReactBootstrap.Button>Chat Room</ReactBootstrap.Button>
+            </Link>
           </li>
         </ul>
         </div>

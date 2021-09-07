@@ -1,0 +1,21 @@
+.MuiInputBase-root {
+    margin-top: 5rem;
+}
+
+.message h5 {
+    color: rgba(0, 0, 255, 0.644);
+}
+
+.message { 
+  border-color: #ccc;
+  background-color: #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.time-right {
+  margin-left: 12rem;
+  float: right;
+  color: #aaa;
+}

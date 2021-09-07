@@ -1,5 +1,8 @@
 import { createContext, useState, useEffect } from "react";
 import firebase from '../Config';
+import firebaseApp from "firebase/app";
+
+const db = firebase.firestore();
 
 export const AuthContext = createContext()
 
@@ -13,6 +16,7 @@ export const AuthContextProvider = ({ children }) => {
           //https://firebase.google.com/docs/reference/js/firebase.user
           console.log('user :>>', user);
           setUser(user)
+          getFavorites(user);
         } else {
           console.log('No valid user DB token');
         }
@@ -34,6 +38,12 @@ export const AuthContextProvider = ({ children }) => {
     }).catch((error) => {
       console.log('error :>>', error);
     });
+
+    var userDocRef = db.collection("users").doc(user.uid);
+      userDocRef.set({
+     
+        favorites: [],
+      });
     
 
   })
@@ -52,6 +62,7 @@ export const AuthContextProvider = ({ children }) => {
     const user = userCredential.user;
     console.log('user :>> ', user)
     setUser(user)
+    getFavorites(user);
   })
   .catch((error) => {
     const errorCode = error.code;
@@ -62,14 +73,36 @@ export const AuthContextProvider = ({ children }) => {
 }
 
 const addToFavorite = (favorite) => {
+    
+      // To update favorite league:
+      db.collection("users")
+        .doc(user.uid)
+        .update({
+          favorites: firebaseApp.firestore.FieldValue.arrayUnion(favorite)
+        })
+        .then(() => {
+          console.log("Document successfully updated!");
+        });
 }
 
-const getFavorites = () => {
+const getFavorites = (user) => {
+  var docRef = db.collection("users").doc(user.uid);
+
+docRef.get().then((doc) => {
+    if (doc.exists) {
+        console.log("Document data:", doc.data());
+    } else {
+        // doc.data() will be undefined in this case
+        console.log("No such document!");
+    }
+}).catch((error) => {
+    console.log("Error getting document:", error);
+});
   
 }
 
     return (
-        <AuthContext.Provider value={{ user, register, login }}>
+        <AuthContext.Provider value={{ user, register, login, addToFavorite }}>
             {children}
         </AuthContext.Provider>
     )

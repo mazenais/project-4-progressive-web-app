@@ -1,11 +1,7 @@
 import React, { useContext } from 'react'
-import {
-    Link
-  } from "react-router-dom";
-  import { AuthContext, AuthContextProvider } from '../../src/context/AuthContext'
-  import DrawerButton from '../components/sideDrawer/DrawerButton'
- 
-  import '../components/Nav.css'
+import { AuthContext, AuthContextProvider } from '../../src/context/AuthContext'
+import DrawerButton from '../components/sideDrawer/DrawerButton'
+import '../components/Nav.css'
   
   
 
@@ -24,7 +20,7 @@ const Nav = props => {
           </div>
             <div className="toolbar_logo">The Premier League</div>
       </nav>
-      <main style={{marginTop: '18px', marginLeft: '10px'}}><p>{user? user.email : "Not logged in"}</p> </main>
+      <main style={{position: 'fixed', marginTop: '18px', marginLeft: '10px'}}><p>{user? user.email : "Not logged in"}</p> </main>
       </header>
       
     )
