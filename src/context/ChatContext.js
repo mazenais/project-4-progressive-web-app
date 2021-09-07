@@ -1,9 +1,7 @@
 import { createContext, useState, useEffect, useContext } from "react";
 import { AuthContext } from "./AuthContext";
-import firebase from '../Config';
+import firebase from "../Config";
 import { deepPurple } from "@material-ui/core/colors";
-
-
 
 //initialize firestore
 const db = firebase.firestore();
@@ -41,10 +39,16 @@ export const ChatContextProvider = ({ children }) => {
           // doc.data() is never undefined for query doc snapShots
           convertedMessages.push(doc.data());
         });
-        console.log('convertedMessages :>> ', convertedMessages);
+        console.log("convertedMessages :>> ", convertedMessages);
         setMessages(convertedMessages);
       });
   };
+
+  const addToFavorite = (favorite) => {
+
+  };
+
+  const getFavorites = () => {};
 
   return (
     <ChatContext.Provider value={{ messages, writeMessage, getMessages }}>
