@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { BrowserRouter as Router, useHistory, Link } from "react-router-dom";
-import { AuthContext } from '../../context/AuthContext'
+import { AuthContext } from "../../context/AuthContext";
 import * as ReactBootstrap from "react-bootstrap";
 
 const SportDetails = ({ items }) => {
@@ -18,7 +18,7 @@ const SportDetails = ({ items }) => {
   const [team, setTeam] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
-  const {addToFavorite} = useContext(AuthContext)
+  const { addToFavorite } = useContext(AuthContext);
 
   useEffect(() => {
     const fetchItems = async () => {
@@ -34,8 +34,8 @@ const SportDetails = ({ items }) => {
   }, []);
 
   const handleOnClick = () => {
-    addToFavorite(team)
-  }
+    addToFavorite(team);
+  };
 
   return (
     <div>
@@ -84,8 +84,10 @@ const SportDetails = ({ items }) => {
           </ul>
         </div>
       </div>
-    <ReactBootstrap.Button onClick={handleOnClick}>Add to Favorite</ReactBootstrap.Button>
-  </div>
+      <ReactBootstrap.Button onClick={handleOnClick}>
+        Add to Favorite
+      </ReactBootstrap.Button>
+    </div>
   );
 };
 

@@ -44,9 +44,7 @@ export const ChatContextProvider = ({ children }) => {
       });
   };
 
-  const addToFavorite = (favorite) => {
-
-  };
+  const addToFavorite = (favorite) => {};
 
   const getFavorites = () => {};
 

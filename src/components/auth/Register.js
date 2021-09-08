@@ -1,54 +1,73 @@
-import React, { useState, useContext } from 'react'
-import { useHistory } from'react-router-dom'
-import { AuthContext } from '../../../src/context/AuthContext'
-import './Login.css'
+import React, { useState, useContext } from "react";
+import { useHistory } from "react-router-dom";
+import { AuthContext } from "../../../src/context/AuthContext";
+import "./Login.css";
 import * as ReactBootstrap from "react-bootstrap";
 import { Input } from "react-bootstrap";
 
 const Register = () => {
-    const [state, setState] = useState({ email: "", password: "", name: ""})
+  const [state, setState] = useState({ email: "", password: "", name: "" });
 
-    const{ register } = useContext(AuthContext)
+  const { register } = useContext(AuthContext);
 
-    const handleChange = (e) => {
-        setState({ ...state, [e.target.name]: e.target.value });
-    }
-    
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        register(state)
-    }
+  const handleChange = (e) => {
+    setState({ ...state, [e.target.name]: e.target.value });
+  };
 
-    console.log('state', state)
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    register(state);
+  };
 
-    const history = useHistory();
+  console.log("state", state);
 
-    const handleHistory = () => {
-      history.push("/sports")
-    }
+  const history = useHistory();
 
-    return (
-        <form onSubmit={handleSubmit}>
-            <div>
-            <button className="return_button" onClick={handleHistory}>back</button>
-            </div>
-            <label> 
-            <p>name</p>
-            <input type="text" name="name" onChange={handleChange} value={state.name} />
-            </label>
-            <label>
-                <p>email</p>
-                <input type="email" name="email" onChange={handleChange} value={state.email} />
-            </label>
-            <label>
-                <p>password</p>
-                <input type="password" name="password" onChange={handleChange} value={state.password} />
-            </label>
-            <div>
-                <button className="submit_button" type="submit">Submit</button>
-            </div>
-        </form>
-    )
-}
+  const handleHistory = () => {
+    history.push("/sports");
+  };
 
-export default Register
+  return (
+    <form onSubmit={handleSubmit}>
+      <div>
+        <button className="return_button" onClick={handleHistory}>
+          back
+        </button>
+      </div>
+      <label>
+        <p>name</p>
+        <input
+          type="text"
+          name="name"
+          onChange={handleChange}
+          value={state.name}
+        />
+      </label>
+      <label>
+        <p>email</p>
+        <input
+          type="email"
+          name="email"
+          onChange={handleChange}
+          value={state.email}
+        />
+      </label>
+      <label>
+        <p>password</p>
+        <input
+          type="password"
+          name="password"
+          onChange={handleChange}
+          value={state.password}
+        />
+      </label>
+      <div>
+        <button className="submit_button" type="submit">
+          Submit
+        </button>
+      </div>
+    </form>
+  );
+};
+
+export default Register;

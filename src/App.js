@@ -17,21 +17,20 @@ import SideDrawer from "./components/sideDrawer/SideDrawer";
 import BackDrop from "./components/Backdrop/BackDrop";
 import { render } from "@testing-library/react";
 import ChatRoom from "./components/auth/ChatRoom";
-import { ChatContext, ChatContextProvider } from "./context/ChatContext"
+import { ChatContext, ChatContextProvider } from "./context/ChatContext";
 import { AuthContextProvider, AuthContext } from "./context/AuthContext";
 
-
-
 const PrivateRoute = ({ component: Component, ...rest }) => {
-  console.log('rest :>> ', rest);
+  console.log("rest :>> ", rest);
 
   const { user } = useContext(AuthContext);
   return (
-    <Route {...rest} render={props => ( 
-        user ? 
-        <Component {...props} /> 
-        : <Redirect to="/Login" />
-    )} />
+    <Route
+      {...rest}
+      render={(props) =>
+        user ? <Component {...props} /> : <Redirect to="/Login" />
+      }
+    />
   );
 };
 
@@ -59,34 +58,30 @@ const App = () => {
 
   return (
     <div className="container" style={{ height: "100%" }}>
-     
-        <AuthContextProvider>
-          <Router>
-            <Nav drawerClickHandler={drawerClickHandler} />
-            {drawerOpen && (
-              <SideDrawer drawerClickHandler={drawerClickHandler} />
-            )}
-            {drawerOpen && <BackDrop />}
-            <ChatContextProvider>
-              <Switch>
-                <Route exact path="/sports">
-                  <SportGrid isLoading={isLoading} items={items} />
-                </Route>
-                <Route exact path="/sports/:idTeam">
-                  <SportDetails />
-                </Route>
-                <Route exact path="/Login">
-                  <Login />
-                </Route>
-                <Route exact path="/Register">
-                  <Register />
-                </Route>
-                <PrivateRoute component={ChatRoom} exact pathe="/Chat" />
-              </Switch>
-            </ChatContextProvider>
-          </Router>
-        </AuthContextProvider>
-      
+      <AuthContextProvider>
+        <Router>
+          <Nav drawerClickHandler={drawerClickHandler} />
+          {drawerOpen && <SideDrawer drawerClickHandler={drawerClickHandler} />}
+          {drawerOpen && <BackDrop />}
+          <ChatContextProvider>
+            <Switch>
+              <Route exact path="/sports">
+                <SportGrid isLoading={isLoading} items={items} />
+              </Route>
+              <Route exact path="/sports/:idTeam">
+                <SportDetails />
+              </Route>
+              <Route exact path="/Login">
+                <Login />
+              </Route>
+              <Route exact path="/Register">
+                <Register />
+              </Route>
+              <PrivateRoute component={ChatRoom} exact pathe="/Chat" />
+            </Switch>
+          </ChatContextProvider>
+        </Router>
+      </AuthContextProvider>
     </div>
   );
 };

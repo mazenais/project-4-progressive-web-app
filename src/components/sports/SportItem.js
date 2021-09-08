@@ -6,7 +6,7 @@ const SportItem = ({ item }) => {
   console.log(item);
   return (
     <Link to={`/sports/${item.idTeam}`}>
-      <h3>{ item.strAlternate }</h3>
+      <h3>{item.strAlternate}</h3>
       <div className="card">
         <div className="card-inner">
           <div className="card-front">
