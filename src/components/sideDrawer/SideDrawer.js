@@ -26,28 +26,24 @@ return (
           <p>{user ? user.email : "Not logged in"}</p>
           <ul>
           <li>
-            <Link  to="/sports">
-              <ReactBootstrap.Button>Home</ReactBootstrap.Button>
-              </Link>
+            <Link to="/sports">Home</Link>
           </li>
           <li>
-            <Link  to="/Login" >
-            <ReactBootstrap.Button>Log In</ReactBootstrap.Button>
+            <Link to="/Login" >
+            Log In
             </Link>
           </li>
           <li>
-            <Link  to="/Register" >
-            <ReactBootstrap.Button>Register</ReactBootstrap.Button>
+            <Link to="/Register" >
+            Register
             </Link>
           </li>
           <li>
-            <Link  to="/ChatRoom" >
-            <ReactBootstrap.Button>Chat Room</ReactBootstrap.Button>
-            </Link>
+            <Link to="/ChatRoom">Chat Room</Link>
           </li>
+          
         </ul>
         </div>
-        
     </nav>
  );
 }

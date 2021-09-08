@@ -16,7 +16,7 @@
 }
 
 .side-drawer ul {
-    height: 100%;
+    
     list-style: none;
     display: flex;
     flex-direction: column;
@@ -24,17 +24,23 @@
 }
 
 .side-drawer li {
-    text-align: center;
-    padding: 1px;
-    margin: 0.5mm;
-    margin-top: 0mm;
-    margin-bottom: 0mm;
-
+    font-size:16px;
+    font-weight:300;
+    text-align:center;
+    position:relative;
+    height:30px;
+    line-height:40px;
+    margin-top:10px;
+   
+    width:100%;
+    margin-left:5%;
+    cursor:pointer;
 }
-
+ 
+ 
 .side-drawer a {
-    margin-top: 120px;
-    margin-inline: 65px;
+    margin-top: 10px;
+    margin-inline: 50px;
     color: inherit;
     text-decoration: none;
     font-size: 1-2rem;
